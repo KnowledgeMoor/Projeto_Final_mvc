@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" th:href="@{/css/menu.css}">
+</head>
+<body>
+     <h1>MENU</h1>
+    <div>
+       
+        <ul>
+            <li th:each="item : ${menuItems}">
+                <a th:href="@{${item.link}}" th:text="${item.nome}">Link</a>
+            </li>
+            <li><a href="/login/sair">log out</a></li>
+        </ul>
+    </div>
+</body>
+</html>

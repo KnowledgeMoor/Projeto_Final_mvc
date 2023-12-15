@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Paciente</title>
+    <link rel="stylesheet" th:href="@{/css/perfil.css}">
+</head>
+<body>
+    <div class="flex">
+        <h1>Paciente</h1>
+        <div th:object="${paciente}" id="info">
+            <p>Nome: <span th:text="*{nome}"></span></p>  
+            <p>Data de nascimento: <span th:text="*{data_nasc}"></span></p>
+            <p>Sexo: <span th:text="*{sexo}"></span></p>
+            <p>CPF: <span th:text="*{cpf}"></span></p>
+            <p>Endereço: <span th:text="*{endereco}"></span></p>
+            <p>Telefone: <span th:text="*{telefone}"></span></p>
+        </div>
+        <details>
+            <summary>Consultas</summary>
+            <ul>
+                <li th:each="itemConsulta, iterStat: ${consultas}">
+                    <div class="itemconsulta">
+                        <ul>
+                            <li>Consulta número: <span th:text="${iterStat.index+1}"></span></li>
+                            <li>Status: <span th:text="${itemConsulta.status}"></span></li>
+                            <li>Data: <span th:text="${itemConsulta.data_hora}"></span></li>
+                            <li>Medico: <span th:text="${itemConsulta.medico}"></span></li>
+                            <li>Sala: <span th:text="${itemConsulta.num_sala}"></span></li>
+                        </ul>
+                        <details>
+                            <summary>Medicamentos prescritos</summary>
+                            <div th:each="meds : ${itemConsulta.medicamentos}">
+                            <ul th:if="${meds.cod_consulta == itemConsulta.cod_consulta}" class="itemexame">
+                                <li>Medicamento: <span th:text="${meds.meds_prescritos}"></span></li>
+                                <li>Dosagem: <span th:text="${meds.dosagens}"></span></li>
+                            </ul>
+                        </div>
+                        </details>
+                        <details>
+                            <summary>Exames</summary>
+                            <div th:each="exame : ${itemConsulta.exames}">
+                            <ul th:if="${exame.cod_consulta == itemConsulta.cod_consulta}" class="itemexame">
+                                <li>Exame: <span th:text="${exame.tipo_exame}"></span></li>
+                                <li>Data: <span th:text="${exame.data_hora}"></span></li>
+                                <li>Resultado: <span th:text="${exame.resultados}"></span></li>
+                                <li>Sala: <span th:text="${exame.num_sala}"></span></li>
+                            </ul>
+                        </div>
+                        </details>
+                    </div>
+                    
+                </li>
+            </ul>
+        </details>
+    </div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link rel="stylesheet" href="css/jAlertWifi.css">
+</head>
+
+<body>
+    <div>
+        <h1>Sistema de gestão de clínica</h1>
+        <form method="POST" action="/login/entrar">
+            <h6 th:text="${mensagem}"> </h6>
+            <input type="text" id="usuario" name="usuario" required placeholder="Usuário">
+            <input type="password" id="senha" name="senha" required placeholder="senha">
+            <button type="submit" id="entrarBtn">Entrar</button>
+        </form>
+        <p><a href="/login/telaNovoUsuario" class="signup-link">Cadastrar</a></p>
+        <p><a href="/login/telaEditarUsuario" class="signup-link">Editar senha</a></p>
+    </div>
+</body>
+
+</html>

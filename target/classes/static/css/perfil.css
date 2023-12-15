@@ -1,0 +1,51 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+body {
+    background-color: rgb(197, 197, 197)
+
+}
+
+.flex {
+    background-color: white;
+    width: 40%;
+    margin: auto;
+    margin-top: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+}
+#info{
+    margin-bottom: 20px;
+}
+
+.itemconsulta {
+    padding: 15px;
+    padding-right: 20px;
+    border: 1px solid black;
+    background-color: rgb(194, 192, 192);
+}
+.itemexame {
+    padding: 15px;
+    padding-right: 20px;
+    border: 1px solid black;
+    background-color: rgb(194, 192, 192);
+}
+ul {
+    list-style-type: none;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+p {
+    padding: 10px 10px;
+    border: 1px solid rgb(107, 107, 107);
+    background-color: rgb(194, 192, 192);
+}

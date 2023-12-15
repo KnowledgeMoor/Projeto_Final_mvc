@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" th:href="@{/css/perfil.css}">
+</head>
+<body>
+    <div class="flex">
+        <h1>Adicionar Consulta</h1>
+        <form action="Consulta" method="POST" th:object="${consulta}">
+            <p>Medico: <select name="medico" id="medico" th:field="*{medico}" required >
+                <option th:each="medico : ${medicos}" th:value="${medico.nome}" th:text="${medico.nome}"></option>
+            </select></p>
+            <p>Paciente: <select name="paciente" id="paciente" th:field="*{paciente}" required>
+                <option th:each="paciente : ${pacientes}" th:value="${paciente.nome}" th:text="${paciente.nome}"></option>
+            </select></p>
+            <p>Data: <input type="text" th:field="*{data_hora}" required></p>
+            <p>Sala: <select name="num_sala" id="num_sala" th:field="*{num_sala}" required>
+                <option th:each="sala : ${salas}" th:value="${sala.num_sala}" th:text="${sala.num_sala}"></option>
+            </select></p>
+            <p>Status: <input type="text" th:field="*{status}" required></p>
+            <p><input type="submit" value="Adicionar"></p>
+    </div>
+</body>
+</html>

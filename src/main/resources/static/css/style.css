@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600&family=Press+Start+2P&display=swap');
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Press Start 2P', sans-serif;
+}
+
+body {
+    padding: 10px;
+    height: 100vh;
+    background-color: rgb(185, 185, 185);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(../img/Doctors.png);
+    background-size: cover;
+}
+
+div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+h1 {
+    margin-bottom: 30px;
+} 
+
+form {
+    background-color: rgba(255, 255, 255, 0);
+    width: 400px;
+    margin-top: 20px;
+    margin-bottom: 15px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid white;
+    border-radius: 10px;
+    background-color: lightgray;
+}
+
+input {
+    margin: 25px 0px;
+    padding: 3px;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    box-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    
+}
+
+input[type="text"], input[type="password"]{
+    background-color: #00000000;
+    border: 1px solid white;
+    color: white;
+    border-radius: 10px;
+}
+
+button{
+    background-color: rgba(0, 0, 0, 0);
+    color: white;
+    border: none;
+    cursor: pointer;
+    box-shadow: none;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+h6 {
+    margin-top: 10px;
+    text-shadow:  0 0 10px black, 0 0 20px black, 0 0 20px black;
+}
+p {
+    margin-top: 20px;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+
+  
+  @-webkit-keyframes glow {
+    from {
+      text-shadow: 0 0 10px #eeeeee, 0 0 20px #000000, 0 0 30px #000000, 0 0 40px #000000, 
+                   0 0 50px #9554b3, 0 0 60px #9554b3, 0 0 70px #9554b3;
+    }
+    to {
+      text-shadow: 0 0 20px #eeeeee, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 
+                   0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+    }
+  }
+
+@media screen and (max-width: 600px) {
+
+    div {
+        width: 100%;
+    }
+    form {
+        width: 70%;
+    }
+    input {
+        width: 90%
+    }
+    .glow {
+        font-size: 30px;
+    }
+}

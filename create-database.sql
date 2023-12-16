@@ -33,8 +33,11 @@ foreign key(role_id) references tb_role(id)
 
 );
 
---insert into tb_role_user(usuario,role_id) values ('gabriel',1);
---insert into tb_role_user(usuario,role_id) values ('jojo',2);
+insert into tb_login(usuario,senha) values ('gabriel', '123');
+insert into tb_login(usuario,senha) values ('jojo','123');
+
+insert into tb_role_user(usuario,role_id) values ('gabriel',1);
+insert into tb_role_user(usuario,role_id) values ('jojo',2);
 
 CREATE TABLE Paciente (
     code_paciente INT PRIMARY KEY auto_increment,

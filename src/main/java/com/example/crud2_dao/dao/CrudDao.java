@@ -17,8 +17,12 @@ import com.example.crud2_dao.domain.Sala;
 @Component
 public class CrudDao {
 
-	@Autowired
+	
 	JdbcTemplate db;
+	
+	public CrudDao(JdbcTemplate db) {
+		this.db = db;
+	}
 
 	public List<Pacientes> getPaciente() {
 		String sql = "select nome, sexo, cpf from Paciente";

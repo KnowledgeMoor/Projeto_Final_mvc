@@ -79,7 +79,7 @@ public class CrudDao {
 
 		List<Pacientes> crud = db.query(sql,
 				new BeanPropertyRowMapper<>(Pacientes.class),
-				new Object[] { nome.trim() });
+				 nome.trim());
 		if (crud != null && crud.size() > 0) {
 			return crud.get(0);
 		} else {

@@ -80,7 +80,7 @@ public class CrudDao {
 		List<Pacientes> crud = db.query(sql,
 				new BeanPropertyRowMapper<>(Pacientes.class),
 				 nome.trim());
-		if (crud != null && crud.size() > 0) {
+		if (crud != null && !crud.isEmpty()) {
 			return crud.get(0);
 		} else {
 			return null;

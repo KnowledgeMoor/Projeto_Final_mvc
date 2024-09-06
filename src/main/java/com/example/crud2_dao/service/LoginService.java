@@ -40,7 +40,7 @@ public class LoginService {
             if (encoder.matches(loginDigitado.getSenha(), loginBanco.getSenha())) {
                 return loginBanco;
             } else {
-                logger.info("Senha não confere para o login "+loginDigitado.getUsuario());
+                logger.info("Senha não confere para o login {}", loginDigitado.getUsuario());
             }
         }
         return null;

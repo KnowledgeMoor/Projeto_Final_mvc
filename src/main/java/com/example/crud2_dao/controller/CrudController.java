@@ -20,6 +20,7 @@ public class CrudController {
     private CrudDao dao;
     @Autowired
     private PerfilController perfil;
+    private static final String lista_pacientes = "listaPacientes";
 
     @PostMapping("Pacientes")
     public String doPacientes(Pacientes crud, Model model){
@@ -48,7 +49,7 @@ public class CrudController {
     public String getCrud(Model model){
         model.addAttribute("paciente", new Pacientes());
         model.addAttribute("pacientes", dao.getPaciente());
-        return "listaPacientes";
+        return lista_pacientes;
     }
 
     @RequestMapping("Medicos")
@@ -71,14 +72,14 @@ public class CrudController {
         Pacientes crud = dao.getPaciente(nome);
         model.addAttribute("paciente", crud);
         model.addAttribute("pacientes", dao.getPaciente());
-        return "listaPacientes";
+        return lista_pacientes;
     }
 
     @RequestMapping("pacienteSearch")
     public String getPacientes(@RequestParam(value = "name", required = true) String name, Model model) {
         model.addAttribute("pacientes",dao.getPacientes(name));
         model.addAttribute("paciente",new Pacientes());
-        return "listaPacientes";
+        return lista_pacientes;
     }
     @RequestMapping("medicoSearch")
     public String getMedicos(@RequestParam(value = "name", required = true) String name, Model model) {
